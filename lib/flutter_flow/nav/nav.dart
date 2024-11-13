@@ -109,11 +109,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const MenuPrincipalWidget(),
         ),
         FFRoute(
-          name: 'Notificacoes',
-          path: '/notificacoes',
-          builder: (context, params) => const NotificacoesWidget(),
-        ),
-        FFRoute(
           name: 'Perfil',
           path: '/perfil',
           builder: (context, params) => const PerfilWidget(),
