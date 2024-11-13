@@ -1,4 +1,5 @@
 import '/auth/supabase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -7,21 +8,21 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'alterar_senha_model.dart';
-export 'alterar_senha_model.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'aletrar_senha_model.dart';
+export 'aletrar_senha_model.dart';
 
-class AlterarSenhaWidget extends StatefulWidget {
-  const AlterarSenhaWidget({super.key});
+class AletrarSenhaWidget extends StatefulWidget {
+  const AletrarSenhaWidget({super.key});
 
   @override
-  State<AlterarSenhaWidget> createState() => _AlterarSenhaWidgetState();
+  State<AletrarSenhaWidget> createState() => _AletrarSenhaWidgetState();
 }
 
-class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
+class _AletrarSenhaWidgetState extends State<AletrarSenhaWidget>
     with TickerProviderStateMixin {
-  late AlterarSenhaModel _model;
+  late AletrarSenhaModel _model;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -34,16 +35,13 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AlterarSenhaModel());
-
-    _model.senhaAtualTextController ??= TextEditingController();
-    _model.senhaAtualFocusNode ??= FocusNode();
+    _model = createModel(context, () => AletrarSenhaModel());
 
     _model.novaSenhaTextController ??= TextEditingController();
     _model.novaSenhaFocusNode ??= FocusNode();
 
-    _model.confirmarSenhaTextController ??= TextEditingController();
-    _model.confirmarSenhaFocusNode ??= FocusNode();
+    _model.confNovaSenhaTextController ??= TextEditingController();
+    _model.confNovaSenhaFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation1': AnimationInfo(
@@ -94,14 +92,19 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
   Widget build(BuildContext context) {
     return BackdropFilter(
       filter: ImageFilter.blur(
-        sigmaX: 5.0,
-        sigmaY: 4.0,
+        sigmaX: 0.0,
+        sigmaY: 0.0,
       ),
       child: Container(
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).accent4,
+          gradient: LinearGradient(
+            colors: [FlutterFlowTheme.of(context).accent4, const Color(0x00262D34)],
+            stops: const [0.0, 1.0],
+            begin: const AlignmentDirectional(0.0, -1.0),
+            end: const AlignmentDirectional(0, 1.0),
+          ),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -212,7 +215,7 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 8.0),
                                                 child: Text(
-                                                  'Certifique-se de colocar uma senha que você não esqueça.',
+                                                  'Sua senha deve ter no mínimo 6 caracteres!',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -247,106 +250,6 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 8.0),
                                     child: Text(
-                                      'Senha atual:',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Sora',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 24.0),
-                                    child: SizedBox(
-                                      width: double.infinity,
-                                      child: TextFormField(
-                                        controller:
-                                            _model.senhaAtualTextController,
-                                        focusNode: _model.senhaAtualFocusNode,
-                                        autofocus: false,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          isDense: true,
-                                          labelStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Sora',
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                          hintText: 'Digite sua senha atual',
-                                          hintStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Sora',
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                              color: Color(0x00000000),
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                              color: Color(0x00000000),
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          errorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          focusedErrorBorder:
-                                              OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          filled: true,
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .tertiary,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Sora',
-                                              letterSpacing: 0.0,
-                                            ),
-                                        cursorColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                        validator: _model
-                                            .senhaAtualTextControllerValidator
-                                            .asValidator(context),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 8.0),
-                                    child: Text(
                                       'Nova senha:',
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -368,9 +271,11 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
                                             _model.novaSenhaTextController,
                                         focusNode: _model.novaSenhaFocusNode,
                                         autofocus: false,
-                                        obscureText: false,
+                                        obscureText:
+                                            !_model.novaSenhaVisibility,
                                         decoration: InputDecoration(
                                           isDense: true,
+                                          labelText: 'Digite sua nova senha',
                                           labelStyle:
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
@@ -378,7 +283,6 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
                                                     fontFamily: 'Sora',
                                                     letterSpacing: 0.0,
                                                   ),
-                                          hintText: 'Digite sua nova senha',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
@@ -427,6 +331,21 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
                                           fillColor:
                                               FlutterFlowTheme.of(context)
                                                   .tertiary,
+                                          suffixIcon: InkWell(
+                                            onTap: () => safeSetState(
+                                              () => _model.novaSenhaVisibility =
+                                                  !_model.novaSenhaVisibility,
+                                            ),
+                                            focusNode:
+                                                FocusNode(skipTraversal: true),
+                                            child: Icon(
+                                              _model.novaSenhaVisibility
+                                                  ? Icons.visibility_outlined
+                                                  : Icons
+                                                      .visibility_off_outlined,
+                                              size: 22,
+                                            ),
+                                          ),
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -434,17 +353,14 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
                                               fontFamily: 'Sora',
                                               letterSpacing: 0.0,
                                             ),
-                                        keyboardType: TextInputType.number,
+                                        keyboardType:
+                                            TextInputType.visiblePassword,
                                         cursorColor:
                                             FlutterFlowTheme.of(context)
                                                 .primaryText,
                                         validator: _model
                                             .novaSenhaTextControllerValidator
                                             .asValidator(context),
-                                        inputFormatters: [
-                                          FilteringTextInputFormatter.allow(
-                                              RegExp('[0-9]'))
-                                        ],
                                       ),
                                     ),
                                   ),
@@ -452,7 +368,7 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 8.0),
                                     child: Text(
-                                      'Confirmar senha:',
+                                      'Confirme sua nova senha:',
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -470,13 +386,15 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
                                       width: double.infinity,
                                       child: TextFormField(
                                         controller:
-                                            _model.confirmarSenhaTextController,
+                                            _model.confNovaSenhaTextController,
                                         focusNode:
-                                            _model.confirmarSenhaFocusNode,
+                                            _model.confNovaSenhaFocusNode,
                                         autofocus: false,
-                                        obscureText: false,
+                                        obscureText:
+                                            !_model.confNovaSenhaVisibility,
                                         decoration: InputDecoration(
                                           isDense: true,
+                                          labelText: 'Confirme sua nova senha',
                                           labelStyle:
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
@@ -484,7 +402,6 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
                                                     fontFamily: 'Sora',
                                                     letterSpacing: 0.0,
                                                   ),
-                                          hintText: 'Confirme sua senha',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
@@ -533,6 +450,23 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
                                           fillColor:
                                               FlutterFlowTheme.of(context)
                                                   .tertiary,
+                                          suffixIcon: InkWell(
+                                            onTap: () => safeSetState(
+                                              () => _model
+                                                      .confNovaSenhaVisibility =
+                                                  !_model
+                                                      .confNovaSenhaVisibility,
+                                            ),
+                                            focusNode:
+                                                FocusNode(skipTraversal: true),
+                                            child: Icon(
+                                              _model.confNovaSenhaVisibility
+                                                  ? Icons.visibility_outlined
+                                                  : Icons
+                                                      .visibility_off_outlined,
+                                              size: 22,
+                                            ),
+                                          ),
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -540,17 +474,14 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
                                               fontFamily: 'Sora',
                                               letterSpacing: 0.0,
                                             ),
-                                        keyboardType: TextInputType.number,
+                                        keyboardType:
+                                            TextInputType.visiblePassword,
                                         cursorColor:
                                             FlutterFlowTheme.of(context)
                                                 .primaryText,
                                         validator: _model
-                                            .confirmarSenhaTextControllerValidator
+                                            .confNovaSenhaTextControllerValidator
                                             .asValidator(context),
-                                        inputFormatters: [
-                                          FilteringTextInputFormatter.allow(
-                                              RegExp('[0-9]'))
-                                        ],
                                       ),
                                     ),
                                   ),
@@ -602,8 +533,96 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget>
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 4.0, 0.0),
                                         child: FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async {
+                                            if (_model.novaSenhaTextController
+                                                    .text ==
+                                                _model
+                                                    .confNovaSenhaTextController
+                                                    .text) {
+                                              _model.apiResult578 =
+                                                  await AlterarSenhaCall.call(
+                                                userToken: currentJwtToken,
+                                                email: currentUserEmail,
+                                                senha: _model
+                                                    .novaSenhaTextController
+                                                    .text,
+                                              );
+
+                                              if ((_model.apiResult578
+                                                      ?.succeeded ??
+                                                  true)) {
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  SnackBar(
+                                                    content: Text(
+                                                      'Senha alterada!',
+                                                      style:
+                                                          GoogleFonts.getFont(
+                                                        'Sora',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
+                                                    ),
+                                                    duration: const Duration(
+                                                        milliseconds: 4000),
+                                                    backgroundColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .success,
+                                                  ),
+                                                );
+                                                Navigator.pop(context);
+                                              } else {
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  SnackBar(
+                                                    content: Text(
+                                                      'Houve um erro',
+                                                      style:
+                                                          GoogleFonts.getFont(
+                                                        'Sora',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
+                                                    ),
+                                                    duration: const Duration(
+                                                        milliseconds: 4000),
+                                                    backgroundColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .error,
+                                                  ),
+                                                );
+                                              }
+                                            } else {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    'As senhas não estão iguais!',
+                                                    style: GoogleFonts.getFont(
+                                                      'Sora',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                  ),
+                                                  duration: const Duration(
+                                                      milliseconds: 4000),
+                                                  backgroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .error,
+                                                ),
+                                              );
+                                            }
+
+                                            safeSetState(() {});
                                           },
                                           text: 'Salvar alteração',
                                           options: FFButtonOptions(

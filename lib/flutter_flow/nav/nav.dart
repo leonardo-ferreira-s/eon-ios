@@ -117,11 +117,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Perfil',
           path: '/perfil',
           builder: (context, params) => const PerfilWidget(),
-        ),
-        FFRoute(
-          name: 'historicoSaques',
-          path: '/historicoSaques',
-          builder: (context, params) => const HistoricoSaquesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

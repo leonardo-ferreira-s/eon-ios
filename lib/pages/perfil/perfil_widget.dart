@@ -1,5 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/aletrar_senha_widget.dart';
 import '/components/dados_user_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -556,28 +557,55 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                 ),
                                 Align(
                                   alignment: const AlignmentDirectional(0.0, 0.0),
-                                  child: Container(
-                                    width: 128.0,
-                                    height: 43.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondary,
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                    child: Text(
-                                      'Alterar senha',
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Sora',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            fontSize: 14.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.normal,
-                                          ),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor: Colors.transparent,
+                                        enableDrag: false,
+                                        context: context,
+                                        builder: (context) {
+                                          return GestureDetector(
+                                            onTap: () => FocusScope.of(context)
+                                                .unfocus(),
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: const AletrarSenhaWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => safeSetState(() {}));
+                                    },
+                                    child: Container(
+                                      width: 128.0,
+                                      height: 43.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: Text(
+                                        'Alterar senha',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Sora',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              fontSize: 14.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                      ),
                                     ),
                                   ),
                                 ),

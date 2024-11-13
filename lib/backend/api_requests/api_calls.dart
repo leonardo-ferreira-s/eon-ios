@@ -9,6 +9,19 @@ export 'api_manager.dart' show ApiCallResponse;
 
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
+/// Start supabase apis Group Code
+
+class SupabaseApisGroup {
+  static String getBaseUrl() => 'https://rjgkiosbxidexelzgsis.supabase.co/';
+  static Map<String, String> headers = {
+    'Content-Type': 'application/json',
+    'apikey':
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I',
+  };
+}
+
+/// End supabase apis Group Code
+
 class LoginSupabaseCall {
   static Future<ApiCallResponse> call({
     String? email = '',
@@ -22,12 +35,12 @@ class LoginSupabaseCall {
     return ApiManager.instance.makeApiCall(
       callName: 'loginSupabase',
       apiUrl:
-          'https://gaommueaytxazkceoott.supabase.co/auth/v1/token?grant_type=password',
+          'https://rjgkiosbxidexelzgsis.supabase.co/auth/v1/token?grant_type=password',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
         'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdhb21tdWVheXR4YXprY2Vvb3R0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQyNTE2NzcsImV4cCI6MjAzOTgyNzY3N30.Er337-hHPp_z1DO-L2dqAsAKsdfvpjwPSXSSSlH12tA',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I',
       },
       params: {},
       body: ffApiRequestBody,
@@ -72,14 +85,14 @@ class TotalComissoesCall {
     return ApiManager.instance.makeApiCall(
       callName: 'TotalComissoes',
       apiUrl:
-          'https://gaommueaytxazkceoott.supabase.co/rest/v1/rpc/total_comissoes',
+          'https://rjgkiosbxidexelzgsis.supabase.co/rest/v1/rpc/total_comissoes',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
         'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdhb21tdWVheXR4YXprY2Vvb3R0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNDI1MTY3NywiZXhwIjoyMDM5ODI3Njc3fQ.yj_qyDSwFntMJqHANQUnNdQ6OHs2wSdI_-ufEAwnYUU',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I',
         'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdhb21tdWVheXR4YXprY2Vvb3R0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNDI1MTY3NywiZXhwIjoyMDM5ODI3Njc3fQ.yj_qyDSwFntMJqHANQUnNdQ6OHs2wSdI_-ufEAwnYUU',
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I',
       },
       params: {},
       body: ffApiRequestBody,
@@ -105,14 +118,14 @@ class SaldoDisponivelCall {
     return ApiManager.instance.makeApiCall(
       callName: 'saldoDisponivel',
       apiUrl:
-          'https://gaommueaytxazkceoott.supabase.co/rest/v1/rpc/saques_disponiveis',
+          'https://rjgkiosbxidexelzgsis.supabase.co/rest/v1/rpc/saques_disponiveis',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
         'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdhb21tdWVheXR4YXprY2Vvb3R0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNDI1MTY3NywiZXhwIjoyMDM5ODI3Njc3fQ.yj_qyDSwFntMJqHANQUnNdQ6OHs2wSdI_-ufEAwnYUU',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I',
         'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdhb21tdWVheXR4YXprY2Vvb3R0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNDI1MTY3NywiZXhwIjoyMDM5ODI3Njc3fQ.yj_qyDSwFntMJqHANQUnNdQ6OHs2wSdI_-ufEAwnYUU',
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I',
       },
       params: {},
       body: ffApiRequestBody,
@@ -144,14 +157,14 @@ class SaldoLiberarCall {
     return ApiManager.instance.makeApiCall(
       callName: 'saldoLiberar',
       apiUrl:
-          'https://gaommueaytxazkceoott.supabase.co/rest/v1/rpc/saldo_liberar',
+          'https://rjgkiosbxidexelzgsis.supabase.co/rest/v1/rpc/saldo_liberar',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
         'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdhb21tdWVheXR4YXprY2Vvb3R0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNDI1MTY3NywiZXhwIjoyMDM5ODI3Njc3fQ.yj_qyDSwFntMJqHANQUnNdQ6OHs2wSdI_-ufEAwnYUU',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I',
         'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdhb21tdWVheXR4YXprY2Vvb3R0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNDI1MTY3NywiZXhwIjoyMDM5ODI3Njc3fQ.yj_qyDSwFntMJqHANQUnNdQ6OHs2wSdI_-ufEAwnYUU',
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I',
       },
       params: {},
       body: ffApiRequestBody,
@@ -179,14 +192,14 @@ class CalcularComissoesDiaCall {
     return ApiManager.instance.makeApiCall(
       callName: 'calcularComissoesDia',
       apiUrl:
-          'https://gaommueaytxazkceoott.supabase.co/rest/v1/rpc/calcular_comissoes_por_dia',
+          'https://rjgkiosbxidexelzgsis.supabase.co/rest/v1/rpc/calcular_comissoes_por_dia',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
         'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdhb21tdWVheXR4YXprY2Vvb3R0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNDI1MTY3NywiZXhwIjoyMDM5ODI3Njc3fQ.yj_qyDSwFntMJqHANQUnNdQ6OHs2wSdI_-ufEAwnYUU',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I',
         'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdhb21tdWVheXR4YXprY2Vvb3R0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNDI1MTY3NywiZXhwIjoyMDM5ODI3Njc3fQ.yj_qyDSwFntMJqHANQUnNdQ6OHs2wSdI_-ufEAwnYUU',
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I',
       },
       params: {},
       body: ffApiRequestBody,
@@ -233,14 +246,14 @@ class CalcularcomissoespordataCall {
     return ApiManager.instance.makeApiCall(
       callName: 'calcularcomissoespordata',
       apiUrl:
-          'https://gaommueaytxazkceoott.supabase.co/rest/v1/rpc/function_calcular_comissoes_por_data',
+          'https://rjgkiosbxidexelzgsis.supabase.co/rest/v1/rpc/function_calcular_comissoes_por_data',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
         'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdhb21tdWVheXR4YXprY2Vvb3R0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNDI1MTY3NywiZXhwIjoyMDM5ODI3Njc3fQ.yj_qyDSwFntMJqHANQUnNdQ6OHs2wSdI_-ufEAwnYUU',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I',
         'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdhb21tdWVheXR4YXprY2Vvb3R0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNDI1MTY3NywiZXhwIjoyMDM5ODI3Njc3fQ.yj_qyDSwFntMJqHANQUnNdQ6OHs2wSdI_-ufEAwnYUU',
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I',
       },
       params: {},
       body: ffApiRequestBody,
@@ -272,6 +285,40 @@ class CalcularcomissoespordataCall {
           .map((x) => castToType<double>(x))
           .withoutNulls
           .toList();
+}
+
+class AlterarSenhaCall {
+  static Future<ApiCallResponse> call({
+    String? userToken = '',
+    String? email = '',
+    String? senha = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "email": "$email",
+  "password": "$senha"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'AlterarSenha',
+      apiUrl: 'https://rjgkiosbxidexelzgsis.supabase.co/auth/v1/user',
+      callType: ApiCallType.PUT,
+      headers: {
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I',
+        'Authorization': 'Bearer $userToken',
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
 }
 
 class ApiPagingParams {

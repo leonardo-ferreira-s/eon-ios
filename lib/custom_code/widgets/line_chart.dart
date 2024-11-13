@@ -64,11 +64,11 @@ class _LineChartState extends State<LineChart> {
 
   Future<void> fetchDataFromAPI() async {
     const String url =
-        'https://gaommueaytxazkceoott.supabase.co/rest/v1/rpc/function_calcular_comissoes_por_data';
+        'https://rjgkiosbxidexelzgsis.supabase.co/rest/v1/rpc/function_calcular_comissoes_por_data';
     const String apiKey =
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdhb21tdWVheXR4YXprY2Vvb3R0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNDI1MTY3NywiZXhwIjoyMDM5ODI3Njc3fQ.yj_qyDSwFntMJqHANQUnNdQ6OHs2wSdI_-ufEAwnYUU';
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I';
     const String token =
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdhb21tdWVheXR4YXprY2Vvb3R0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNDI1MTY3NywiZXhwIjoyMDM5ODI3Njc3fQ.yj_qyDSwFntMJqHANQUnNdQ6OHs2wSdI_-ufEAwnYUU';
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ2tpb3NieGlkZXhlbHpnc2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MjIwNzQsImV4cCI6MjAyNTk5ODA3NH0.9ofMXSIittRfGSwWX4a4qAdToZYLNlseiY1OTzwQ-1I';
 
     final Map<String, dynamic> requestBody = {
       'p_data_inicio': DateFormat('yyyy-MM-dd').format(widget.startDate),
