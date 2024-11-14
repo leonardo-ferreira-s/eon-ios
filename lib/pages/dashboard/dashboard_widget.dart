@@ -427,12 +427,14 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                   'vendedor',
                                   FFAppState().idUsuariosTable ?? 0,
                                 )
-                                    .in_(
+                                    .inFilter(
                                   'status_pedido',
                                   [3, 4, 7],
                                 ).gte(
                                   'data_entrega',
-                                  supaSerialize<DateTime>(_model.dataIni ?? functions.voltarDia0(7)),
+                                  supaSerialize<DateTime>(_model.dataIni == null
+                                      ? functions.voltarDia0(7)!
+                                      : _model.dataIni!),
                                 ),
                               ),
                               builder: (context, snapshot) {
@@ -479,13 +481,15 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             'vendedor',
                                             FFAppState().idUsuariosTable,
                                           )
-                                          .in_(
+                                          .inFilter(
                                         'status_pedido',
                                         [3, 4, 7],
                                       ).gte(
                                         'data_entrega',
                                         supaSerialize<DateTime>(
-                                            _model.dataIni ?? functions.voltarDia0(7)),
+                                            _model.dataIni == null
+                                                ? functions.voltarDia0(7)!
+                                                : _model.dataIni!),
                                       ),
                                     ),
                                     builder: (context, snapshot) {
@@ -626,7 +630,9 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                   .gte(
                                     'data_entrega',
                                     supaSerialize<DateTime>(
-                                        _model.dataIni ?? functions.voltarDia0(7)),
+                                        _model.dataIni == null
+                                            ? functions.voltarDia0(7)!
+                                            : _model.dataIni!),
                                   ),
                             ),
                             builder: (context, snapshot) {
@@ -667,7 +673,9 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                         .gte(
                                           'data_entrega',
                                           supaSerialize<DateTime>(
-                                              _model.dataIni ?? functions.voltarDia0(7)),
+                                              _model.dataIni == null
+                                                  ? functions.voltarDia0(7)!
+                                                  : _model.dataIni!),
                                         ),
                                   ),
                                   builder: (context, snapshot) {

@@ -574,7 +574,7 @@ class _DadosUserWidgetState extends State<DadosUserWidget>
                                     future: TipoChavepixTable().querySingleRow(
                                       queryFn: (q) => q.eq(
                                         'id',
-                                        columnUsuariosRow?.tipoDeChavePix,
+                                        columnUsuariosRow!.tipoDeChavePix!,
                                       ),
                                     ),
                                     builder: (context, snapshot) {

@@ -112,6 +112,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Perfil',
           path: '/perfil',
           builder: (context, params) => const PerfilWidget(),
+        ),
+        FFRoute(
+          name: 'PoliticaDePrivacidade',
+          path: '/politicaDePrivacidade',
+          builder: (context, params) => const PoliticaDePrivacidadeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

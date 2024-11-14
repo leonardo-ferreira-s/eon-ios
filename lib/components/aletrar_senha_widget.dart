@@ -489,7 +489,7 @@ class _AletrarSenhaWidgetState extends State<AletrarSenhaWidget>
                                     future: TipoChavepixTable().querySingleRow(
                                       queryFn: (q) => q.eq(
                                         'id',
-                                        columnUsuariosRow?.tipoDeChavePix,
+                                        columnUsuariosRow!.tipoDeChavePix!,
                                       ),
                                     ),
                                     builder: (context, snapshot) {
