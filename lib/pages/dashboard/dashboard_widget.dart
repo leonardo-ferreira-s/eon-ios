@@ -37,7 +37,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
         data: {
           'fcm_token': FFAppState().fcmToken,
         },
-        matchingRows: (rows) => rows.eq(
+        matchingRows: (rows) => rows.eqOrNull(
           'uuid_auth_user',
           currentUserUid,
         ),
@@ -48,7 +48,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
       FFAppState().idUsuario = currentUserUid;
       safeSetState(() {});
       _model.idUserPublic = await UsuariosTable().queryRows(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'uuid_auth_user',
           currentUserUid,
         ),
@@ -133,7 +133,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                         8.0, 0.0, 0.0, 0.0),
                                     child: FutureBuilder<List<UsuariosRow>>(
                                       future: UsuariosTable().querySingleRow(
-                                        queryFn: (q) => q.eq(
+                                        queryFn: (q) => q.eqOrNull(
                                           'uuid_auth_user',
                                           valueOrDefault<String>(
                                             FFAppState().idUsuario,
@@ -423,18 +423,16 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                             child: FutureBuilder<List<PedidosRow>>(
                               future: PedidosTable().queryRows(
                                 queryFn: (q) => q
-                                    .eq(
+                                    .eqOrNull(
                                   'vendedor',
                                   FFAppState().idUsuariosTable ?? 0,
                                 )
-                                    .inFilter(
+                                    .inFilterOrNull(
                                   'status_pedido',
                                   [3, 4, 7],
-                                ).gte(
+                                ).gteOrNull(
                                   'data_entrega',
-                                  supaSerialize<DateTime>(_model.dataIni == null
-                                      ? functions.voltarDia0(7)!
-                                      : _model.dataIni!),
+                                  supaSerialize<DateTime>(_model.dataIni ?? functions.voltarDia0(7)),
                                 ),
                               ),
                               builder: (context, snapshot) {
@@ -473,23 +471,21 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                   child: FutureBuilder<List<PedidosRow>>(
                                     future: PedidosTable().queryRows(
                                       queryFn: (q) => q
-                                          .eq(
+                                          .eqOrNull(
                                             'id_produtor',
                                             FFAppState().idUsuariosTable,
                                           )
-                                          .neq(
+                                          .neqOrNull(
                                             'vendedor',
                                             FFAppState().idUsuariosTable,
                                           )
-                                          .inFilter(
+                                          .inFilterOrNull(
                                         'status_pedido',
                                         [3, 4, 7],
-                                      ).gte(
+                                      ).gteOrNull(
                                         'data_entrega',
                                         supaSerialize<DateTime>(
-                                            _model.dataIni == null
-                                                ? functions.voltarDia0(7)!
-                                                : _model.dataIni!),
+                                            _model.dataIni ?? functions.voltarDia0(7)),
                                       ),
                                     ),
                                     builder: (context, snapshot) {
@@ -619,20 +615,18 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                           FutureBuilder<List<PedidosRow>>(
                             future: PedidosTable().queryRows(
                               queryFn: (q) => q
-                                  .eq(
+                                  .eqOrNull(
                                     'vendedor',
                                     FFAppState().idUsuariosTable ?? 0,
                                   )
-                                  .eq(
+                                  .eqOrNull(
                                     'status_pedido',
                                     4,
                                   )
-                                  .gte(
+                                  .gteOrNull(
                                     'data_entrega',
                                     supaSerialize<DateTime>(
-                                        _model.dataIni == null
-                                            ? functions.voltarDia0(7)!
-                                            : _model.dataIni!),
+                                        _model.dataIni ?? functions.voltarDia0(7)),
                                   ),
                             ),
                             builder: (context, snapshot) {
@@ -658,24 +652,22 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                 child: FutureBuilder<List<PedidosRow>>(
                                   future: PedidosTable().queryRows(
                                     queryFn: (q) => q
-                                        .eq(
+                                        .eqOrNull(
                                           'id_produtor',
                                           FFAppState().idUsuariosTable,
                                         )
-                                        .neq(
+                                        .neqOrNull(
                                           'vendedor',
                                           FFAppState().idUsuariosTable,
                                         )
-                                        .eq(
+                                        .eqOrNull(
                                           'status_pedido',
                                           4,
                                         )
-                                        .gte(
+                                        .gteOrNull(
                                           'data_entrega',
                                           supaSerialize<DateTime>(
-                                              _model.dataIni == null
-                                                  ? functions.voltarDia0(7)!
-                                                  : _model.dataIni!),
+                                              _model.dataIni ?? functions.voltarDia0(7)),
                                         ),
                                   ),
                                   builder: (context, snapshot) {

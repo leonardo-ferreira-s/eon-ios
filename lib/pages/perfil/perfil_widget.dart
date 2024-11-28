@@ -73,7 +73,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
             padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: FutureBuilder<List<UsuariosRow>>(
               future: UsuariosTable().querySingleRow(
-                queryFn: (q) => q.eq(
+                queryFn: (q) => q.eqOrNull(
                   'uuid_auth_user',
                   FFAppState().idUsuario,
                 ),

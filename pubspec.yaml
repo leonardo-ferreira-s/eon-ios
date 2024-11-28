@@ -61,7 +61,7 @@ dependencies:
   path_provider_foundation: 2.4.0
   path_provider_linux: 2.2.1
   path_provider_platform_interface: 2.1.2
-  path_provider_windows: 2.2.1
+  path_provider_windows: 2.3.0
   percent_indicator: 4.2.2
   postgrest: 2.1.4
   provider: 6.1.2
@@ -121,9 +121,9 @@ flutter_launcher_icons:
   ios: true
   web:
     generate: true
-  image_path: 'assets/images/app_launcher_icon.jpg'
+  image_path: 'assets/images/app_launcher_icon.png'
   adaptive_icon_background: '#f3f3f3'
-  adaptive_icon_foreground: 'assets/images/adaptive_foreground_icon.jpg'
+  adaptive_icon_foreground: 'assets/images/adaptive_foreground_icon.png'
 
 
 # For information on the generic Dart part of this file, see the

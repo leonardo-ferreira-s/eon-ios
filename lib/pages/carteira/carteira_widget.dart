@@ -100,7 +100,7 @@ class _CarteiraWidgetState extends State<CarteiraWidget> {
                               child: FutureBuilder<List<SaquesRow>>(
                                 future: SaquesTable().querySingleRow(
                                   queryFn: (q) => q
-                                      .eq(
+                                      .eqOrNull(
                                         'id_usuario',
                                         FFAppState().idUsuariosTable,
                                       )
@@ -353,7 +353,7 @@ class _CarteiraWidgetState extends State<CarteiraWidget> {
                                 0.0, 16.0, 0.0, 0.0),
                             child: FutureBuilder<List<TotalSacadoRow>>(
                               future: TotalSacadoTable().querySingleRow(
-                                queryFn: (q) => q.eq(
+                                queryFn: (q) => q.eqOrNull(
                                   'id_usuario',
                                   FFAppState().idUsuariosTable,
                                 ),
@@ -481,11 +481,11 @@ class _CarteiraWidgetState extends State<CarteiraWidget> {
                             child: FutureBuilder<List<UsuarioViewRow>>(
                               future: UsuarioViewTable().querySingleRow(
                                 queryFn: (q) => q
-                                    .eq(
+                                    .eqOrNull(
                                       'uuid_auth_user',
                                       FFAppState().idUsuario,
                                     )
-                                    .eq(
+                                    .eqOrNull(
                                       'uuid_auth_user',
                                       FFAppState().idUsuario,
                                     ),

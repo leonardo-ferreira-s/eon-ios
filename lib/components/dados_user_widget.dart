@@ -144,7 +144,7 @@ class _DadosUserWidgetState extends State<DadosUserWidget>
                           padding: const EdgeInsets.all(24.0),
                           child: FutureBuilder<List<UsuariosRow>>(
                             future: UsuariosTable().querySingleRow(
-                              queryFn: (q) => q.eq(
+                              queryFn: (q) => q.eqOrNull(
                                 'uuid_auth_user',
                                 currentUserUid,
                               ),
@@ -572,9 +572,9 @@ class _DadosUserWidgetState extends State<DadosUserWidget>
                                   ),
                                   FutureBuilder<List<TipoChavepixRow>>(
                                     future: TipoChavepixTable().querySingleRow(
-                                      queryFn: (q) => q.eq(
+                                      queryFn: (q) => q.eqOrNull(
                                         'id',
-                                        columnUsuariosRow!.tipoDeChavePix!,
+                                        columnUsuariosRow?.tipoDeChavePix,
                                       ),
                                     ),
                                     builder: (context, snapshot) {
@@ -629,7 +629,8 @@ class _DadosUserWidgetState extends State<DadosUserWidget>
                                                 'cpf': _model
                                                     .cpfTextController.text,
                                               },
-                                              matchingRows: (rows) => rows.eq(
+                                              matchingRows: (rows) =>
+                                                  rows.eqOrNull(
                                                 'id_usuarios',
                                                 FFAppState().idUsuariosTable,
                                               ),

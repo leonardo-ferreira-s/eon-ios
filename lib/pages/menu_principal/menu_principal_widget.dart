@@ -79,7 +79,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                       child: FutureBuilder<List<UsuariosRow>>(
                         future: UsuariosTable().querySingleRow(
-                          queryFn: (q) => q.eq(
+                          queryFn: (q) => q.eqOrNull(
                             'uuid_auth_user',
                             FFAppState().idUsuario,
                           ),

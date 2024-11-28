@@ -147,7 +147,7 @@ class _AletrarSenhaWidgetState extends State<AletrarSenhaWidget>
                           padding: const EdgeInsets.all(24.0),
                           child: FutureBuilder<List<UsuariosRow>>(
                             future: UsuariosTable().querySingleRow(
-                              queryFn: (q) => q.eq(
+                              queryFn: (q) => q.eqOrNull(
                                 'uuid_auth_user',
                                 currentUserUid,
                               ),
@@ -487,9 +487,9 @@ class _AletrarSenhaWidgetState extends State<AletrarSenhaWidget>
                                   ),
                                   FutureBuilder<List<TipoChavepixRow>>(
                                     future: TipoChavepixTable().querySingleRow(
-                                      queryFn: (q) => q.eq(
+                                      queryFn: (q) => q.eqOrNull(
                                         'id',
-                                        columnUsuariosRow!.tipoDeChavePix!,
+                                        columnUsuariosRow?.tipoDeChavePix,
                                       ),
                                     ),
                                     builder: (context, snapshot) {
