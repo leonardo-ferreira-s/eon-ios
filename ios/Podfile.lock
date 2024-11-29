@@ -167,7 +167,7 @@ DEPENDENCIES:
   - firebase_messaging (from `.symlinks/plugins/firebase_messaging/ios`)
   - Flutter (from `Flutter`)
   - onesignal_flutter (from `.symlinks/plugins/onesignal_flutter/ios`)
-  - OneSignalXCFramework (< 6.0, >= 5.0.0)
+  - OneSignalXCFramework (~> 5.2.8)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
   - sign_in_with_apple (from `.symlinks/plugins/sign_in_with_apple/ios`)
@@ -255,6 +255,6 @@ SPEC CHECKSUMS:
   url_launcher_ios: 5334b05cef931de560670eeae103fd3e431ac3fe
   webview_flutter_wkwebview: 0982481e3d9c78fd5c6f62a002fcd24fc791f1e4
 
-PODFILE CHECKSUM: 431aa505360f56de8820002e1c5a1aa5c6cc5c8a
+PODFILE CHECKSUM: cb138589968b9745103490d4e6a26d4d27fd63eb
 
 COCOAPODS: 1.16.2
