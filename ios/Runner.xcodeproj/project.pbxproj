@@ -203,9 +203,9 @@
 				97C146EA1CF9000F007C117D /* Sources */,
 				97C146EB1CF9000F007C117D /* Frameworks */,
 				97C146EC1CF9000F007C117D /* Resources */,
+				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				B08D1067B57B017CEAADA1EE /* [CP] Embed Pods Frameworks */,
 				82A9478012917EA54F6F9B16 /* [CP] Copy Pods Resources */,
-				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 			);
 			buildRules = (
 			);
